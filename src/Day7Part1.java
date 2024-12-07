@@ -20,19 +20,22 @@ public class Day7Part1 {
         }
         scanner.close();
 
-        long totalCalibrationResult = 0;
+        long totalCalibrationResult = 0, testValue;
+        String[] parts, numbers;
+        long [] nums;
+
 
         // Process each line
         for (String line : inputLines) {
-            String[] parts = line.split(": ");
+            parts = line.split(": ");
             if (parts.length != 2) {
                 continue; // Skip malformed lines
             }
 
             try {
-                long testValue = Long.parseLong(parts[0].trim()); // Test value
-                String[] numbers = parts[1].trim().split(" "); // Numbers to use in the calculation
-                long[] nums = new long[numbers.length]; // Parsed numbers into long array
+                testValue = Long.parseLong(parts[0].trim()); // Test value
+                numbers = parts[1].trim().split(" "); // Numbers to use in the calculation
+                nums = new long[numbers.length]; // Parsed numbers into long array
                 for (int i = 0; i < numbers.length; i++) {
                     nums[i] = Long.parseLong(numbers[i]);
                 }
@@ -54,14 +57,13 @@ public class Day7Part1 {
         Set<Long> results = new HashSet<>();
         results.add(numbers[0]);
     
+        long sumResult, mulResult;
         for (int i = 1; i < numbers.length; i++) {
             Set<Long> newResults = new HashSet<>();
             for (long result : results) {
-                long sumResult = result + numbers[i];
-                long mulResult = result * numbers[i];
-                if (sumResult == testValue || mulResult == testValue) {
-                    return true; // Found a match - return early and avoid unnecessary calculations
-                }
+                sumResult = result + numbers[i];
+                mulResult = result * numbers[i];
+
                 newResults.add(sumResult);
                 newResults.add(mulResult);
             }
