@@ -58,7 +58,6 @@ public class Day9Part2 {
     // Move the blocks to the left as much as possible (to the first free space found)
     // Done quickly but could be optimized by saving free spaces' indices and sizes
     // Also, return the position of the last block moved so the calculation of the checksum can be done faster
-    // Use linked list to make the insert and removal of blocks faster (just change the pointers)...
     private static List<Block> compactDisk(List<Block> individualBlocks) {
         int n = individualBlocks.size();
     
