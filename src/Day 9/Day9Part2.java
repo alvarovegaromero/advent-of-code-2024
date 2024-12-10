@@ -1,5 +1,5 @@
-// Day 9 - Part 1
-// https://adventofcode.com/2024/day/9
+// Day 9 - Part 2
+// https://adventofcode.com/2024/day/9#part2
 
 import java.util.ArrayList;
 import java.util.List;
