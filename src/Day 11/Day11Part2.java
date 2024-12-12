@@ -1,3 +1,6 @@
+// Day 11 - Part 2
+// https://adventofcode.com/2024/day/11#part2
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
